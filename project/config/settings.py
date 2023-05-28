@@ -25,6 +25,16 @@ SECRET_KEY = 'django-insecure-3&(yed!(87kajn8@w*w+71s9!2bv5_!&)+i48q!wa0hd#@nz3)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ********************************************************************
+# sys.path es una lista de rutas donde Python busca módulos importados
+# Servirá para poder importar las aplicaciones de la carpeta apps
+import sys
+
+APLICACIONES = BASE_DIR / "apps"
+sys.path.append(str(APLICACIONES))
+# ********************************************************************
+
+
 ALLOWED_HOSTS = []
 
 
@@ -37,6 +47,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+# APLICACIONES CREADAS POR MI
+ 
+INSTALLED_APPS += [
+    'jugador',
+    'equipos',
+    'home',
 ]
 
 MIDDLEWARE = [
