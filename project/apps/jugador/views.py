@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from . import forms
 from .models import Jugador
+
 def index(request):
     return render(request, "jugador/index.html")
 
