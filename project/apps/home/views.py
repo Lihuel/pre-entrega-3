@@ -12,5 +12,5 @@ def laliga(request):
 def login(request):
     return render(request, "home/login.html")
 
-def noticias(request):
-    return render(request, "home/noticias.html")
+# def noticias(request):
+#     return render(request, "noticias/index.html")

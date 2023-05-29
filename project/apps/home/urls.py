@@ -7,7 +7,7 @@ urlpatterns = [
     path("",views.index, name ="index"),
     path("laliga",views.laliga, name ="laliga"),
     path("login",views.login, name ="login"),
-    path("noticias",views.noticias, name ="noticias"),
+    # path("noticias",views.noticias, name ="noticias"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

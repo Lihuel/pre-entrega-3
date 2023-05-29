@@ -6,4 +6,5 @@ urlpatterns = [
     path("", include(("home.urls", "home"))),
     path("equipos/", include(("equipos.urls", "equipos"))),
     path("jugador/", include(("jugador.urls", "jugador"))),
+    path("noticias/", include(("noticias.urls", "noticias"))),
 ]

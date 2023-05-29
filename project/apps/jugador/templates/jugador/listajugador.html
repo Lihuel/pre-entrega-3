@@ -6,5 +6,5 @@
         <h2>Tiene {{ jugador.edad }} años de edad</h2> 
         <h2>Juega de {{ jugador.posicion }} </h2> 
         {% endfor %}
-<a href="{% url 'jugador:index' %}"> Volver atras</a>
+<a class="btn btn-primary btn-lg" href="{% url 'jugador:index' %}">Volver atras </a>
 {% endblock content %}

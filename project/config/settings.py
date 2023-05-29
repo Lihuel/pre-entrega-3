@@ -55,6 +55,7 @@ INSTALLED_APPS += [
     'jugador',
     'equipos',
     'home',
+    'noticias',
 ]
 
 MIDDLEWARE = [
