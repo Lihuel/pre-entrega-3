@@ -5,8 +5,9 @@ def index(request):
     return render(request, "home/index.html")
 
 def laliga(request):
-    fecha = datetime.now()
-    return render(request, "home/laliga.html")
+    now = datetime.now()
+    Fecha = now.strftime("%d de  %B del %Y ")
+    return render(request, "home/laliga.html", {"Fecha": Fecha})
 
 def login(request):
     return render(request, "home/login.html")
