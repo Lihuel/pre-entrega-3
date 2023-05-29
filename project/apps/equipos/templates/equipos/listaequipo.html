@@ -1,0 +1,9 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    {% for equipo in lista_equipos %}
+        <h1>Nombre del equipo: {{ equipo.nombre_equipo }}</h1>
+        <h2>Tiene {{ equipo.cantidad_de_jugadores }} jugadores</h2> 
+        {% endfor %}
+<a href="{% url 'equipos:index' %}"> Volver atras</a>
+{% endblock content %}

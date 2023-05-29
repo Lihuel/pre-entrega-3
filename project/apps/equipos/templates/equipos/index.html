@@ -3,4 +3,9 @@
 
 {% block content %}
   <h1>-Equipos de la Liga-</h1>  
+  
+  <a class="btn btn-primary btn-lg" href="{% url 'equipos:crearequipo' %}"> Crear Equipo </a> <br>
+  <a class="btn btn-primary btn-lg" href="{% url 'equipos:listaequipo' %}"> Equipos inscriptos </a>
+
+
 {% endblock content %}

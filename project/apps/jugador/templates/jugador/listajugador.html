@@ -1,0 +1,10 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    {% for jugador in lista_jugadores %}
+        <h1>Nombre del jugador: {{ jugador.nombre }}</h1>
+        <h2>Tiene {{ jugador.edad }} años de edad</h2> 
+        <h2>Juega de {{ jugador.posicion }} </h2> 
+        {% endfor %}
+<a href="{% url 'jugador:index' %}"> Volver atras</a>
+{% endblock content %}

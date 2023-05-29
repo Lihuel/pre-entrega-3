@@ -3,4 +3,7 @@
 
 {% block content %}
   <h1>-Jugadores de la Liga-</h1>  
+
+  <a class="btn btn-primary btn-lg" href="{% url 'jugador:crearjugador' %}"> Crear Jugador </a> <br>
+  <a class="btn btn-primary btn-lg" href="{% url 'jugador:listajugador' %}"> Jugadores inscriptos </a>
 {% endblock content %}
