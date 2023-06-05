@@ -8,3 +8,8 @@ class Equipo(models.Model):
 
     def __str__(self):
         return self.nombre_equipo
+    
+
+    class meta:
+        verbose_name = "Equipo"
+        verbose_name_plural = "Equipos"
