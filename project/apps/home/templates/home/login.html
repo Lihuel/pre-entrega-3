@@ -3,5 +3,11 @@
 {% block content %}
 
 <h1>LOGIN</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+        <a><button class="btn btn-primary btn-lg"  type="submit">Iniciar sesión</button> </a>   
+</form>
 <a class="btn btn-primary btn-lg" href="{% url 'home:index' %}">Volver atras </a>   
 {% endblock content %}
