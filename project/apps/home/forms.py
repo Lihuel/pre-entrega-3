@@ -11,7 +11,7 @@ class CustomUserCreationForm(UserCreationForm):
             "username": forms.TextInput(attrs={"class": "form-control"}),
             "password": forms.PasswordInput(attrs={"class": "form-control"}),
         }
-
+        help_texts = {k: "" for k in fields}
 
 class CustomAuthenticationForm(AuthenticationForm):
     class Meta:
@@ -21,3 +21,4 @@ class CustomAuthenticationForm(AuthenticationForm):
             "username": forms.TextInput(attrs={"class": "form-control"}),
             "password": forms.PasswordInput(attrs={"class": "form-control"}),
         }
+        help_texts = {k: "" for k in fields}

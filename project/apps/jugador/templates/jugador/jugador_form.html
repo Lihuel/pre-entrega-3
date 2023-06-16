@@ -14,4 +14,6 @@
     </form>
     {% url 'jugador:index' as url %}
     {% include 'home/index_back.html' with link=url %}
+    {% url 'home:index' as url %}
+    {% include 'home/index_inicio.html' with link=url %}
 {% endblock content_jugador %}

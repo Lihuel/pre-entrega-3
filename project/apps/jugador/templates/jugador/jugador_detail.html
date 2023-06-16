@@ -13,7 +13,9 @@
         <li>Fecha de creacion: {{ object.fecha_creacion }}</li>
     </ul>
 
-    {% url 'jugador:index' as url %}
+    {% url 'jugador:jugador_list' as url %}
     {% include 'home/index_back.html' with link=url %}
+    {% url 'home:index' as url %}
+    {% include 'home/index_inicio.html' with link=url %}
 
 {% endblock content_jugador %}
