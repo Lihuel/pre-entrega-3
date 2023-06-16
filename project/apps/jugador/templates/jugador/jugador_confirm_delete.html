@@ -1,0 +1,18 @@
+{% extends 'jugador/index.html' %}
+
+{% block title %}
+    Eliminacion de Jugador
+{% endblock title %}
+
+{% block content_jugador %}
+    <p class="fs-5 fst-italic">¿Confirmas eliminar el siguiente jugador "{{ object }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="d-grid gap-3">
+            <button type="submit" class="btn btn-danger">Confirmar</button>
+
+            {% include 'home/index_back.html' %}
+
+        </div>
+    </form>
+{% endblock content_jugador %}

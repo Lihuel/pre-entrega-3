@@ -1,0 +1,19 @@
+{% extends 'jugador/index.html' %}
+
+{% block title %}
+    Datos del Jugador
+{% endblock title %}
+
+{% block content_jugador %}
+    <ul>
+        <li>Nombre:{{ object.nombre }}</li>
+        <li>Edad: {{ object.edad }}</li>
+        <li>Poscion: {{ object.posicion }}</li>
+        <li>Equipo: {{ object.equipo }}</li>
+        <li>Fecha de creacion: {{ object.fecha_creacion }}</li>
+    </ul>
+
+    {% url 'jugador:index' as url %}
+    {% include 'home/index_back.html' with link=url %}
+
+{% endblock content_jugador %}

@@ -1,0 +1,41 @@
+{% extends 'jugador/list.html' %}
+
+{% block title %}
+    Lista de Jugadores
+{% endblock title %}
+
+{% block search %}
+    <div class="py-lg-4">
+        <form action="{% url 'jugador:jugador_list' %}" method="get">
+            <input name="consulta" type="text" placeholder="Buscar...">
+        </form>
+    </div>
+{% endblock search %}
+ 
+{% block table_header %}
+    <tr>
+        <th>Nombre</th>
+        <th>Equipo</th>
+
+    </tr>
+{% endblock table_header %}
+{% block table_body %}
+    {% for jugador in object_list %}
+        <tr>
+            <td>{{ jugador.nombre }}</td>
+            <td>{{ jugador.equipo }}</td>
+            <td>
+                <a href="{% url 'jugador:jugador_detail' jugador.id %}"
+                   class="btn btn-primary btn-lg">Ver detalle</a>
+            </td>
+            <td>
+                <a href="{% url 'jugador:jugador_update' jugador.id %}"
+                   class="btn btn-primary btn-lg">Actualizar</a> 
+            </td>
+            <td>
+                <a href="{% url 'jugador:jugador_delete' jugador.id %}"
+                  class="btn btn-primary btn-lg" >Eliminar</a>
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock table_body %}
