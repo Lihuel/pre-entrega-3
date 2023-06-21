@@ -1,8 +1,8 @@
 from django.db import models
-from equipos.models import *
+from equipo.models import *
 from django.contrib import admin
 from django.utils import timezone
-from datetime import datetime
+
 
 
 admin.site.site_title = "Jugadores"

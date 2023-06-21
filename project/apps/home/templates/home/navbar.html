@@ -12,7 +12,7 @@
                 {% if user.is_authenticated %}
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home:index' %}">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'jugador:index' %}">Jugadores</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'equipos:index' %}">Equipos</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'equipo:index' %}">Equipos</a></li>
                 <li class="nav-item"><a class="nav-link text-bg-light">{{ user.username }}</a></li>
                 <li class="nav-item"><a class="nav-link active" href="{% url 'home:logout' %}">Logout</a></li>
                 {% endif %}

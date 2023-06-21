@@ -6,11 +6,11 @@
 
 {% block content_jugador %}
     <ul>
-        <li>Nombre:{{ object.nombre }}</li>
+        <li>Nombre: {{ object.nombre }}</li>
         <li>Edad: {{ object.edad }}</li>
         <li>Poscion: {{ object.posicion }}</li>
         <li>Equipo: {{ object.equipo }}</li>
-        <li>Fecha de creacion: {{ object.fecha_creacion }}</li>
+        <li>Fecha de creacion del Jugador: {{ object.fecha_creacion }}</li>
     </ul>
 
     {% url 'jugador:jugador_list' as url %}

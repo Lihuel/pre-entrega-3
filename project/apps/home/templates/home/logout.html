@@ -6,5 +6,6 @@
     <div class="fs-3 fst-italic">
         <p>Has salido de la sesión...</p>
     </div>
-
+    {% url 'home:index' as url %}
+    {% include 'home/index_back.html' with link=url %} 
 {% endblock content %}

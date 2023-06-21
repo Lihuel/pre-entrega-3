@@ -61,7 +61,7 @@ INSTALLED_APPS = [
  
 INSTALLED_APPS += [
     'jugador',
-    'equipos',
+    'equipo',
     'home',
     'noticias',
 ]

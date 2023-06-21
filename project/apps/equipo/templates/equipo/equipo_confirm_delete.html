@@ -1,0 +1,18 @@
+{% extends 'equipo/index.html' %}
+
+{% block title %}
+    Eliminacion de Equipo
+{% endblock title %}
+
+{% block content_equipo %}
+    <p class="fs-5 fst-italic">¿Confirmas eliminar el siguiente Equipo "{{ object }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="d-grid gap-3">
+            <button type="submit" class="btn btn-danger">Confirmar</button>
+
+            {% include 'home/index_back.html' %}
+
+        </div>
+    </form>
+{% endblock content_equipo %}

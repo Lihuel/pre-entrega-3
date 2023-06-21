@@ -1,0 +1,43 @@
+{% extends 'equipo/list.html' %}
+
+{% block title %}
+    Lista de Equipos
+{% endblock title %}
+
+{% block search %}
+    <div class="py-lg-4">
+        <form action="{% url 'equipo:equipo_list' %}" method="get">
+            <input name="consulta" type="text" placeholder="Buscar...">
+        </form>
+    </div>
+{% endblock search %}
+ 
+{% block table_header %}
+    <tr>
+        <th>Equipo</th>
+        <th>Cantidad de jugadores</th>
+        <th>Puntos</th>
+
+    </tr>
+{% endblock table_header %}
+{% block table_body %}
+    {% for equipo in object_list %}
+        <tr>
+            <td>{{ equipo.nombre_equipo }}</td>
+            <td>{{ equipo.cantidad_de_jugadores }}</td>
+            <td>{{ equipo.cantidad_de_puntos }}</td>
+            <td>
+                <a href="{% url 'equipo:equipo_detail' equipo.id %}"
+                   class="btn btn-primary btn-lg">Ver detalle</a>
+            </td>
+            <td>
+                <a href="{% url 'equipo:equipo_update' equipo.id %}"
+                   class="btn btn-primary btn-lg">Actualizar</a> 
+            </td>
+            <td>
+                <a href="{% url 'equipo:equipo_delete' equipo.id %}"
+                  class="btn btn-primary btn-lg" >Eliminar</a>
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock table_body %}

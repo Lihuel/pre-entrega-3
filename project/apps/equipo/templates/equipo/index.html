@@ -1,0 +1,13 @@
+{% extends 'home/base.html' %}
+{% block content %}
+ <h3 class="shadow-lg text-center">
+  {% block title %}
+  -Equipos de la Liga-
+  {% endblock title %}
+ </h3>
+  {% block content_equipo %}
+  <a class="btn btn-primary btn-lg" href="{% url 'equipo:equipo_create' %}"> Crear Equipo </a> <br>
+  <a class="btn btn-primary btn-lg" href="{% url 'equipo:equipo_list' %}"> Equipos inscriptos </a> <br>
+  <a class="btn btn-primary btn-lg" href="{% url 'home:index' %}">Volver a inicio </a>
+  {% endblock content_equipo %}
+{% endblock content %}

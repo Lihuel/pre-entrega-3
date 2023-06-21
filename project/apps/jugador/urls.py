@@ -5,8 +5,6 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     # path("",views.index, name ="index"),
-    # path("crearjugador",views.crearjugador, name ="crearjugador"),
-    # path("listajugador",views.listajugador, name ="listajugador"),
     path("", TemplateView.as_view(template_name="jugador/index.html"), name="index"),
     path("jugador/detail/<int:pk>", views.JugadorDetail.as_view(), name="jugador_detail"),
     path("jugador/list/", views.JugadorList.as_view(), name="jugador_list"),

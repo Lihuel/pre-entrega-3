@@ -1,0 +1,20 @@
+{% extends 'equipo/index.html' %}
+
+{% block title %}
+    Datos del Equipo
+{% endblock title %}
+
+{% block content_equipo %}
+    <ul>
+        <li>Nombre de Equipo: {{ object.nombre_equipo }}</li>
+        <li>Cantidad de Jugadores: {{ object.cantidad_de_jugadores }}</li>
+        <li>Cantidad de Puntos: {{ object.cantidad_de_puntos }}</li>
+        <li>Fecha de creacion del Equipo: {{ object.fecha_creacion }}</li>
+    </ul>
+
+    {% url 'equipo:equipo_list' as url %}
+    {% include 'home/index_back.html' with link=url %}
+    {% url 'home:index' as url %}
+    {% include 'home/index_inicio.html' with link=url %}
+
+{% endblock content_equipo %}
