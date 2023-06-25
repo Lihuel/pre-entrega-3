@@ -24,17 +24,20 @@
         <tr>
             <td>{{ jugador.nombre }}</td>
             <td>{{ jugador.equipo }}</td>
-            <td>
-                <a href="{% url 'jugador:jugador_detail' jugador.id %}"
+            <td>{% if user.is_authenticated %}
+                <a href="{% url 'jugador:jugador_detail' jugador.id %}"                                     
                    class="btn btn-primary btn-lg">Ver detalle</a>
+                   {% endif %}
             </td>
-            <td>
+            <td>{% if user.is_authenticated %}
                 <a href="{% url 'jugador:jugador_update' jugador.id %}"
-                   class="btn btn-primary btn-lg">Actualizar</a> 
+                   class="btn btn-success btn-lg">Actualizar</a> 
+                   {% endif %}
             </td>
-            <td>
+            <td> {% if user.is_staff %}
                 <a href="{% url 'jugador:jugador_delete' jugador.id %}"
-                  class="btn btn-primary btn-lg" >Eliminar</a>
+                  class="btn btn-danger btn-lg" >Eliminar</a>
+                  {% endif %}
             </td>
         </tr>
     {% endfor %}

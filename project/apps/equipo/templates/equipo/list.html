@@ -25,8 +25,8 @@
     {% else %}
         <p class="fs-4 fst-italic text_center shadow-lg">No hay Equipos ingresados</p>
     {% endif %}
-
     {% url 'equipo:index' as url %}
     {% include 'home/index_back.html' with link=url %}
-
+    {% url 'home:index' as url %}
+    {% include 'home/index_inicio.html' with link=url %}
 {% endblock content_equipo %}

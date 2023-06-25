@@ -8,11 +8,13 @@
     <p class="fs-5 fst-italic">¿Confirmas eliminar el siguiente Equipo "{{ object }}"?</p>
     <form method="post">
         {% csrf_token %}
-        <div class="d-grid gap-3">
-            <button type="submit" class="btn btn-danger">Confirmar</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-danger btn-lg">Confirmar</button>
 
-            {% include 'home/index_back.html' %}
-
+            {% url 'equipo:equipo_list' as url %}
+            {% include 'home/index_back.html' with link=url %}
+            {% url 'home:index' as url %}
+            {% include 'home/index_inicio.html' with link=url %}
         </div>
     </form>
 {% endblock content_equipo %}

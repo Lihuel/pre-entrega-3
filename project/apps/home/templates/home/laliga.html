@@ -1,9 +1,14 @@
 {% extends 'home/base.html' %}
 
+{% load static %}
+
 {% block content %}
-    <h1>Aca encontraras toda la informacion que necesitas tener de los equipos y los jugadores que estan inscriptos en la La liga</h1><br>
-    <h2>¡Muchas Gracias por pasarte por aca!</h2>
-    <h2>Hoy es {{ Fecha }}</h2>
+<div class="text-center">
+    <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'home/img/pelota.png' %}" alt="Presentacion" width="200" height="300" />
+</div>   
+<div class="text-center display-2 mb-2 mt-2">Aca encontraras toda la informacion que necesitas saber sobre los equipos y los jugadores que estan inscriptos en La liga.</div>
+<div class="text-center display-2 mb-2 mt-2">¡Muchas Gracias por pasarte por aca!</div>
+<div class="text-center display-2 mb-2 mt-2">Hoy es {{ Fecha }}</div>
     {% url 'home:index' as url %}
     {% include 'home/index_back.html' with link=url %} 
 {% endblock content %}

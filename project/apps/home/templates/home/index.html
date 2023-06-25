@@ -1,12 +1,13 @@
 {% extends 'home/base.html' %}
+{% load static %}
 
 {% block content %}
+{% if user.is_authenticated %}
+<H1  class="text-center display-4 mb-2 mt-2">Bienvenido {{ user.username }}</H1>
+{% endif %}
 {% if user.is_staff %}
-<div class="row">
-    <a href="{% url 'admin:index' %}" class="btn btn-outline-dark">Administración</a>
-</div>
-<div class="row">
-    <a href="{% url 'home:register' %}" class="btn btn-outline-dark">Registrar nuevo Jugador</a>
+<div class="text-center">
+    <a href="{% url 'home:admin' %}" class="btn btn-outline-dark  btn-lg">Administración</a>
 </div>
 {% endif %}
 <header class="py-5">
@@ -14,8 +15,15 @@
         <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
             <div class="m-4 m-lg-5">
                 <h1 class="display-5 fw-bold">Bienvenidos a la Liga</h1>
-                <p class="fs-4">¡¡¡Encontraras todos los equipos y jugadores de la Liga Argentina de Futbol!!!</p>
-                <a class="btn btn-primary btn-lg" href="{% url 'home:login' %}">Ingresar</a>
+                <div class="text-center">
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'home/img/presentacion.png' %}" alt="Presentación" width="400" height="300" />
+                </div>  
+                <p class="fs-4">¡¡¡Encontraras todos los equipos y jugadores de la Liga de Futbol!!!</p>
+                {% if user.is_authenticated %}
+                <a class="btn btn-primary btn-lg" href="{% url 'home:logout' %}"><i class="bi bi-fullscreen-exit"></i><br> Logout</a>
+                {% else %}
+                <a class="btn btn-primary btn-lg" href="{% url 'home:login' %}"><i class="bi bi-trophy"></i><br> Ingresar</a>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -29,7 +37,7 @@
                 <div class="card bg-light border-0 h-100">
                     <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
-                        <a class="btn btn-primary btn-lg" href="{% url 'jugador:index' %}"><i class="bi bi-collection"></i></a></div>
+                        <a class="btn btn-primary btn-lg" href="{% url 'jugador:index' %}"><i class="bi bi-gear"></i></a></div>
                         <h2 class="fs-4 fw-bold">Jugadores</h2>
                         <p class="mb-0">Encontras todos los jugadores inscriptos</p>
                     </div>
@@ -39,7 +47,7 @@
                 <div class="card bg-light border-0 h-100">
                     <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
-                        <a class="btn btn-primary btn-lg" href="{% url 'equipo:index' %}"><i class="bi bi-cloud-download"></i></a></div>
+                        <a class="btn btn-primary btn-lg" href="{% url 'equipo:index' %}"><i class="bi bi-patch-plus"></i></a></div>
                         <h2 class="fs-4 fw-bold">Equipos</h2>
                         <p class="mb-0">Busca tu equipo preferido</p>
                     </div>

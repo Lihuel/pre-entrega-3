@@ -6,8 +6,12 @@
   {% endblock title %}
  </h3>
   {% block content_equipo %}
+  {% if user.is_authenticated %}
+  {% if user.is_staff %}
   <a class="btn btn-primary btn-lg" href="{% url 'equipo:equipo_create' %}"> Crear Equipo </a> <br>
+  {% endif %}
   <a class="btn btn-primary btn-lg" href="{% url 'equipo:equipo_list' %}"> Equipos inscriptos </a> <br>
+  {% endif %}
   <a class="btn btn-primary btn-lg" href="{% url 'home:index' %}">Volver a inicio </a>
   {% endblock content_equipo %}
 {% endblock content %}

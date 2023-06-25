@@ -11,16 +11,16 @@ def index(request):
 
 def laliga(request):
     now = datetime.now()
-    Fecha = now.strftime("%d de  %B del %Y ")
-    # fecha = f"{now}".split()[0] 
-    # year,month,day = fecha.split("-") 
-    # months = {1:"Enero", 2: "Febrero", 3:"Marzo", 4:"Abril", 5:"Mayo", 6:"Junio", 7:"Julio", 8:"Agosto"}
-    # Fecha = f"{day} de {months[int(month)]} del {year}"
+    # Fecha = now.strftime("%d de  %B del %Y ")
+    fecha = f"{now}".split()[0] 
+    year,month,day = fecha.split("-") 
+    months = {1:"Enero", 2: "Febrero", 3:"Marzo", 4:"Abril", 5:"Mayo", 6:"Junio", 7:"Julio", 8:"Agosto"}
+    Fecha = f"{day} de {months[int(month)]} del {year}"
     return render(request, "home/laliga.html", {"Fecha": Fecha})
 
 
-def nosotros(request):
-    return render(request, "home/nosotros.html")
+def acerca_de_mi(request):
+    return render(request, "home/acerca_de_mi.html")
 
 
 # def login_request(request):
@@ -36,7 +36,7 @@ def nosotros(request):
 #     else:
 #         form = AuthenticationForm()
 #     return render(request, "home/login.html", {"form": form})
-@staff_member_required
+# @staff_member_required
 def register(request):
     if request.method == "POST":
         form = forms.CustomUserCreationForm(request.POST)
@@ -47,6 +47,9 @@ def register(request):
     else:
         form = forms.CustomUserCreationForm()
     return render(request, "home/register.html", {"form": form})
+
+def admin(request):
+    return render(request, "home/admin.html")
 
 # def noticias(request):
 #     return render(request, "noticias/index.html")

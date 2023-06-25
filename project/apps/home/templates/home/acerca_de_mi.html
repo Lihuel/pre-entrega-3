@@ -1,0 +1,9 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="text-center display-2 mb-3 mt-3">Mi nombre es Lihuel y este es mi primer desarrollo en python con Django</div>
+<div class="text-center display-2 mb-3 mt-3">Mi email es lihuelsalvo@gmail.com</div>
+<div class="text-center display-2 mb-3 mt-3">Fecha de Creacion 14/06/2023</div>
+{% url 'home:index' as url %}
+{% include 'home/index_back.html' with link=url %}  
+{% endblock content %}  
