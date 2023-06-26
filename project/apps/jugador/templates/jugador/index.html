@@ -6,7 +6,9 @@
   {% endblock title %}
  </h3>
   {% block content_jugador %}
+  {% if user.is_authenticated %}
   <a class="btn btn-primary btn-lg" href="{% url 'jugador:jugador_create' %}"> Crear Jugador </a> <br>
+  {% endif %}
   <a class="btn btn-primary btn-lg" href="{% url 'jugador:jugador_list' %}"> Jugadores inscriptos </a> <br>
   <a class="btn btn-primary btn-lg" href="{% url 'home:index' %}">Volver a inicio </a>
   {% endblock content_jugador %}

@@ -1,6 +1,8 @@
 {% extends 'home/base.html' %}
 {% block content %}
+<div class="text-center">
 <h1>Panel de Administración</h1>
+</div>
 <div class="text-center">
     <a href="{% url 'home:register' %}" class="btn btn-outline-dark  btn-lg">Registrar nuevo Usuario</a>
     <a href="{% url 'equipo:index' %}" class="btn btn-outline-dark  btn-lg">Registrar, eliminar o actualizar un Equipo</a>

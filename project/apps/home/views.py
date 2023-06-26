@@ -1,8 +1,5 @@
 from django.shortcuts import render
 from datetime import datetime
-from django.contrib.auth import authenticate, login
-from django.contrib.admin.views.decorators import staff_member_required
-from django.contrib.auth.forms import AuthenticationForm
 from . import forms
 
 
@@ -23,20 +20,6 @@ def acerca_de_mi(request):
     return render(request, "home/acerca_de_mi.html")
 
 
-# def login_request(request):
-#     if request.method == "POST":
-#         form = forms.CustomAuthenticationForm(request, data=request.POST)
-#         if form.is_valid():
-#             usuario = form.cleaned_data.get("username")
-#             contraseña = form.cleaned_data.get("password")
-#             user = authenticate(username=usuario, password=contraseña)
-#             if user is not None:
-#                 login(request, user)
-#                 return render(request, "home/index.html", {"mensaje": f"Usted a sido logeado como {usuario}"})
-#     else:
-#         form = AuthenticationForm()
-#     return render(request, "home/login.html", {"form": form})
-# @staff_member_required
 def register(request):
     if request.method == "POST":
         form = forms.CustomUserCreationForm(request.POST)
@@ -50,6 +33,3 @@ def register(request):
 
 def admin(request):
     return render(request, "home/admin.html")
-
-# def noticias(request):
-#     return render(request, "noticias/index.html")

@@ -1,13 +1,15 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-
+<div class="text-center">
 <h1>Bienvenido al inicio de Sesion</h1>
-
+</div>
+<div class="text-center">
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
         <a><button class="btn btn-primary btn-lg"  type="submit">Iniciar sesión</button> </a>   
+    </div>      
 </form>
 {% url 'home:index' as url %}
 {% include 'home/index_back.html' with link=url %} 
