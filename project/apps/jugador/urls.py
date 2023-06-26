@@ -10,5 +10,5 @@ urlpatterns = [
     path("jugador/list/", views.JugadorList.as_view(), name="jugador_list"),
     path("jugador/create/",(views.JugadorCreate.as_view()), name="jugador_create"),
     path("jugador/delete/<int:pk>", staff_member_required(views.JugadorDelete.as_view()), name="jugador_delete"),
-    path("jugador/update/<int:pk>", staff_member_required(views.JugadorUpdate.as_view()), name="jugador_update"),
+    path("jugador/update/<int:pk>", (views.JugadorUpdate.as_view()), name="jugador_update"),
 ]
