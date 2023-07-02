@@ -11,7 +11,7 @@ def crearnoticia(request):
       form = forms.NoticiaForm(request.POST)
       if form.is_valid():
          form.save()
-         return redirect("Noticia:index")
+         return redirect("noticias:index")
    form = forms.NoticiaForm()
    context = {'form': form}
    return render(request, "noticias/crearnoticia.html", context)
